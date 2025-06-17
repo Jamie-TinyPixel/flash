@@ -1,0 +1,85 @@
+---
+import './src/styles/global.css'
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description} = Astro.props;
+
+---
+
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Basic Meta Tags -->
+<title>{ title }</title>
+<meta
+  name={ title }
+  content={ description } 
+/>
+<meta name="keywords" content="blog, tech, photography, game dev" />
+<meta name="author" content="TinyPixel Studios on behalf of Jamie P." />
+
+<!-- Favicons -->
+<link rel="icon" href="/favicons/favicon.png" sizes="any" />
+<!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" /> -->
+
+<!-- Favicon for IE 
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> -->
+
+<!-- Favicons for different sizes 
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" /> -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://purplelight.me/" />
+<meta property="og:title" content="purplelight" />
+<meta
+  property="og:description"
+  content="my corner of the internet."
+/>
+<meta
+  property="og:image"
+  content="https://example.com/need-to-implement"
+/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://example.com/need-to-implement/" />
+<meta property="twitter:title" content="purplelight" />
+<meta
+  property="twitter:description"
+  content="my corner of the internet"
+/>
+<meta
+  property="twitter:image"
+  content="https://example.com/need-to-implement/"
+/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://purplelight.me/" />
+
+<!-- Additional SEO -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<!-- Apple Touch Icon (already included in favicons, but keeping for backwards compatibility) -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<!-- Theme Color for Mobile Browsers -->
+<meta name="theme-color" content="#0000ff" />
+
+<!-- For IE -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
+
+<!-- HTML in your document's head -->
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+

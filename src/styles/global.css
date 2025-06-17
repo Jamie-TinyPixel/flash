@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@theme {
+  --color-primary: #161614;
+  --color-secondary: #f4f5ef;
+}
+/* CSS */
+:root {
+  /* Typography */
+  font-feature-settings: "liga" 1, "calt" 1,
+    /* Contextual Alternates */ "dlig" 1, /* Discretionary Ligatures */ "ss07" 1,
+    /* fSquare punctuation */ "ss08" 1, /* Square quotes */ "zero" 1,
+    /* Slashed zero */ "tnum" 1, /* Tabular numbers */ "cv03" 1,
+    /* Open six */ "cv04" 1, /* Open nine */ "cv01" 1,
+    /* Alternate one */ "cv09", /* Flat-top three */ "cv02" 1; /* Open 4 */
+  font-family: Inter, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+@supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+/* Hero Glow */
+.hero {
+  -webkit-filter: drop-shadow( 0px 0px 15px #8f4be7);
+  filter: drop-shadow( 0px 0px 15px #8f4be7);
+  animation: glow 1.5s ease-in alternate;
+}
+
+@keyframes glow {
+  from {
+    -webkit-filter: drop-shadow( 0px 0px 0px #8f4be7);
+    filter: drop-shadow( 0px 0px 0px #8f4be7);
+  }
+  to {
+    -webkit-filter: drop-shadow( 0px 0px 15px #8f4be7);
+    filter: drop-shadow( 0px 0px 15px #8f4be7);
+  }
+}
+
+/* images */
+img {
+  margin-block: 2.5rem;
+  border-radius: 0.75rem;
+}
+
+
+::selection {
+  color: black;
+}
