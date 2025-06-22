@@ -1,0 +1,109 @@
+---
+const {
+  variant,
+  size,
+  onlyIconSize,
+  gap,
+  class: className,
+  ...rest
+} = Astro.props;
+
+// Default button
+const defaultClass = [
+  "text-black",
+  "bg-[#EFC3E6]",
+  "hover:bg-[#F0A6CA]",
+  "focus:ring-base-500/50",
+];
+
+const accentClass = [
+  "text-white",
+  "bg-base-900",
+  "hover:bg-base-800",
+  "focus:ring-base-500/50",
+]
+
+const mutedClass = [
+  "text-white",
+  "bg-base-900",
+  "hover:bg-base-800",
+  "focus:ring-base-500/50",
+]
+
+const infoClass = [
+  "text-white",
+  "bg-base-900",
+  "hover:bg-base-800",
+  "focus:ring-base-500/50",
+]
+
+const successClass = [
+  "text-white",
+  "bg-base-900",
+  "hover:bg-base-800",
+  "focus:ring-base-500/50",
+]
+
+const linkClass = [
+  "text-white",
+  "bg-base-900",
+  "hover:bg-base-800",
+  "focus:ring-base-500/50",
+]
+// More variants go here
+
+// Size
+const xs = ["h-8", "px-4", "py-2", "text-xs", "font-medium", "rounded-md"];
+const sm = ["h-8", "px-5", "py-2", "text-sm", "font-medium", "rounded-md"];
+const base = ["h-8", "px-6", "py-5", "text-base", "font-semibold", "rounded-lg"];
+const md = ["h-8", "px-7", "py-6", "text-lg", "font-semibold", "rounded-lg"];
+const lg = ["h-8", "px-10", "py-7", "text-xl", "font-bold", "rounded-xl"];
+const xl = ["h-8", "px-12", "py-8", "text-2xl", "font-bold", "rounded-xl"];
+
+// More sizes go here
+
+// Gap
+const gapXS = ["gap-2"];
+const gapSM = ["gap-2"];
+const gapBase = ["gap-2"];
+const gapMD = ["gap-2"];
+const gapLG = ["gap-2"];
+
+// More gaps go here
+const additionalClasses = className ? className.split(" ") : [];
+---
+<div class="p-2">
+    <button
+    class:list={[
+        "flex",
+        "items-center",
+        "justify-center",
+        "transition-all",
+        "duration-300",
+        "focus:ring-2",
+        "focus:outline-none",
+        variant === "accent" && accentClass,
+        variant === "default" && defaultClass,
+        variant === "muted" && mutedClass,
+        variant === "info" && infoClass,
+        variant === "success" && successClass,
+        variant === "link" && linkClass,
+        size === "xs" && xs,
+        size === "sm" && sm,
+        size === "base" && base,
+        size === "md" && md,
+        size === "lg" && lg,
+        size === "xl" && xl,
+        gap === "xs" && gapXS,
+        gap === "sm" && gapSM,
+        gap === "base" && gapBase,
+        gap === "md" && gapMD,
+        gap === "lg" && gapLG,
+        ...additionalClasses,
+    ]}
+    {...rest} >
+
+    <slot />
+
+    </button>
+</div>

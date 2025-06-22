@@ -2,8 +2,9 @@
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 @theme {
-  --color-primary: #161614;
-  --color-secondary: #f4f5ef;
+  --color-primary: #B8BEDD;
+  --color-secondary: #F0E6EF;
+  --color-tertiary: #EFC3E6;
 }
 /* CSS */
 :root {
@@ -51,4 +52,17 @@ img {
 
 ::selection {
   color: black;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
